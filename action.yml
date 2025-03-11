@@ -1,4 +1,4 @@
-name: 'Phx Build And Deploy Composite Action'
+name: 'Faux Composite Action'
 description: 'Execute Build And Deploy Operations In A Composite Action'
 inputs:
   secrets:
@@ -14,16 +14,6 @@ inputs:
   enable-extended-ops:
     type: boolean
     description: Enable Extended Ops
-outputs:
-  json-action-outputs:
-    description: "Json Composite Action Outputs"
-    value: ${{ toJSON(steps.json-ops.outputs) }}
-  json-action-extended-outputs:
-    description: "Json Composite Action Outputs"
-    value: ${{ toJSON(steps.json-extended-ops.outputs) }}    
-  has-extended-outputs:
-    description: "Has Json Extended Composite Action Outputs"
-    value: ${{ steps.json-extended-ops.outputs.has-extended-ops-results || false }}
 
     
 runs:
