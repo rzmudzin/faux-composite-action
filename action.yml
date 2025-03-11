@@ -22,4 +22,4 @@ runs:
     - name: Set Env Inputs
       shell: bash
       run: |
-          echo "RUN_SECRET_SECRET1=${{ fromJSON(inputs.secrets).DESC }}" >> $GITHUB_ENV  
+          echo "Composite Workspace Folder: ${{github.workspace}}"
