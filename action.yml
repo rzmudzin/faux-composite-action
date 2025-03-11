@@ -1,20 +1,20 @@
 name: 'Faux Composite Action'
 description: 'Execute Build And Deploy Operations In A Composite Action'
 inputs:
-  secrets:
-    description: 'Secrets'
+  app:
+    description: App Distribution Id
     required: true
-  actionInputs:
-    description: 'Inputs'
+  token:
+    description: Token
     required: true
-  is-enterprise-app-build:
-    type: boolean
-    description: Enterprise App Build
+  file:
+    description: Package
     required: true
-  enable-extended-ops:
-    type: boolean
-    description: Enable Extended Ops
-
+  release-notes:
+    description: Change Log
+    required: true
+  group:
+    description: App Group
     
 runs:
   using: "composite"
@@ -22,4 +22,8 @@ runs:
     - name: Set Env Inputs
       shell: bash
       run: |
-          echo "Composite Workspace Folder: ${{github.workspace}}"
+          echo "App: ${{env.app}}"
+          echo "Token: ${{env.token}}"
+          echo "Package: ${{env.file}}"
+          echo "Change Log: ${{env.release-notes}}"
+          echo "Group: ${{env.group}}"
