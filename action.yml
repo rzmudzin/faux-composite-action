@@ -22,8 +22,8 @@ runs:
     - name: Set Env Inputs
       shell: bash
       run: |
-          echo "App: ${{env.app}}"
-          echo "Token: ${{env.token}}"
-          echo "Package: ${{env.file}}"
-          echo "Change Log: ${{env.release-notes}}"
-          echo "Group: ${{env.group}}"
+          echo "App: ${{inputs.app}}"
+          echo "Token: ${{inputs.token}}"
+          echo "Package: ${{inputs.file}}"
+          echo "Change Log: ${{inputs.release-notes}}"
+          echo "Group: ${{inputs.group}}"
